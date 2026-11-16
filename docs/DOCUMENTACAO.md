@@ -206,26 +206,9 @@ A foto da seção Sobre tem várias camadas de proteção contra cópia.
 | Arrastar a foto | bloqueado |
 | Segurar o dedo na foto (celular) | bloqueado |
 | Selecionar a foto | bloqueado |
-| F12, Ctrl+Shift+I / J / C / K | bloqueados (e a foto borra) |
-| Ctrl+U (ver código), Ctrl+S (salvar), Ctrl+P (imprimir) | bloqueados (e a foto borra) |
 | Imprimir a página | a foto some |
 
-### 3. Borrado automático contra prints
-
-A foto fica **borrada na hora** (classe `shielded` no `<html>`, borrado feito pelo CSS) quando:
-
-| Situação | Por quê |
-|---|---|
-| A tecla **Windows** é apertada | é a primeira tecla do Win+Shift+S. A foto borra antes de o Windows congelar a tela para o recorte |
-| A tecla **Print Screen** é apertada | além de borrar, o site tenta limpar a área de transferência |
-| O **mouse sai da página** | ex.: indo clicar na Ferramenta de Captura na barra de tarefas |
-| A página **perde o foco** ou a aba fica escondida | outro programa foi aberto por cima |
-
-**Tempo de volta (4 segundos):** depois de qualquer uma dessas situações, a foto continua borrada por 4 segundos quando a página volta ao primeiro plano. A Ferramenta de Captura some, devolve a tela por um instante e só então congela para o recorte. Esse tempo garante que ela congele a foto ainda borrada.
-
-O borrado acontece **instantaneamente** (sem animação). Só a volta ao normal é suave. Ao abrir o site pela primeira vez (ex.: link vindo do WhatsApp), a foto já aparece nítida.
-
-### 4. Marca d'água
+### 3. Marca d'água
 
 "© Antônio Lucas · portfólio" é desenhado junto com a foto, embaixo e centralizado. Aparece em qualquer captura que passe pelas proteções.
 
@@ -235,12 +218,10 @@ Nenhum site consegue impedir 100% a cópia de uma imagem que está na tela. Aind
 
 - fotografar a tela com outro celular;
 - tirar print pelos botões do próprio celular (o navegador não avisa o site);
-- usar a captura **com atraso** de 5 ou 10 segundos da Ferramenta de Captura;
+- tirar print da tela no computador (Print Screen, Ferramenta de Captura);
 - alguém com conhecimento técnico contornar os bloqueios do navegador.
 
 As proteções barram a grande maioria das pessoas. Lembre também que a foto continua pública no seu perfil do GitHub.
-
-> **Por que não há detecção de "DevTools aberto" pelo tamanho da janela?** Essa técnica confunde o zoom do navegador (125%, 150%) com o DevTools e deixaria a foto sempre borrada para essas pessoas. Por isso ela foi removida. Os atalhos do DevTools continuam bloqueados.
 
 ### Como trocar a foto
 
@@ -383,7 +364,7 @@ O código está dentro de uma função que se executa sozinha (IIFE), para não 
 | 3 | Navegação | Fundo do menu ao rolar, menu do celular, seção ativa e botão flutuante do WhatsApp |
 | 4 | Animações | Entrada em cascata (`.reveal`) e brilho que segue o mouse nos cards |
 | 5 | Pipeline | Roteiro, digitação do log e loop infinito do topo |
-| 6 | Foto protegida | Desembaralha e desenha a foto no canvas, aplica os bloqueios e controla o borrado |
+| 6 | Foto protegida | Desembaralha e desenha a foto no canvas, aplica os bloqueios de botão direito/arrasto |
 
 ---
 
@@ -433,7 +414,6 @@ Depois acesse `http://localhost:5500`. Também funciona com a extensão **Live S
 | Cor de destaque | `--accent` no topo do `styles.css` (e `--accent-soft`, que é a mesma cor transparente) |
 | Fontes | link do Google Fonts no `index.html` + `--font`, `--mono` e `--serif` no `styles.css` |
 | Roteiro do pipeline do topo | lista `script` no `main.js` (seção 5) |
-| Tempo do borrado ao voltar para a página | `RETURN_DELAY` no `main.js` (seção 6) |
 | Foto | `tools/proteger-foto.mjs` (veja [Como trocar a foto](#como-trocar-a-foto)) |
 | Imagem de compartilhamento | substitua `assets/img/og.png` (ideal 1200×630 px) |
 
@@ -446,7 +426,6 @@ Depois acesse `http://localhost:5500`. Também funciona com a extensão **Live S
 | Botão do WhatsApp abre sem destinatário | Número de exemplo ou com erro no `config.js`. Use 55 + DDD + número, só dígitos |
 | Botão de e-mail ou LinkedIn não aparece | O campo está vazio no `config.js`: o botão é removido de propósito |
 | A foto não aparece | `photo-data.js` ausente ou gerado com outra chave. Rode o `proteger-foto.mjs` de novo |
-| A foto fica borrada | A página está sem foco, o mouse está fora dela ou houve um "alerta" nos últimos 4 segundos. Clique na página e espere |
 | Alterações não aparecem no site publicado | Faça `git push` e aguarde ~1 minuto. Se continuar, recarregue com Ctrl+F5 |
 | A prévia do link no WhatsApp está sem imagem | O `og:image` precisa ser um endereço completo (`https://…`) |
 

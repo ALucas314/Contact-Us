@@ -198,7 +198,7 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spa
 }
 .portrait-frame canvas {
   display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--surface);
-  transition: filter 0.25s ease, transform 0.6s var(--ease); pointer-events: none;
+  transition: transform 0.6s var(--ease); pointer-events: none;
 }
 .portrait:hover canvas { transform: scale(1.02); }
 .portrait-shield { position: absolute; inset: 0; z-index: 2; background: transparent; cursor: default; border-radius: 50%; }
@@ -208,8 +208,6 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spa
   white-space: nowrap;
 }
 .portrait figcaption strong { color: var(--text); font-weight: 600; }
-/* Borrado quando a página perde o foco (ferramenta de print), ao apertar Print Screen ou com o DevTools aberto */
-.shielded .portrait-frame canvas { filter: blur(26px) saturate(0.6); transform: scale(1.15); transition: none; } /* borra na hora; só a volta ao normal é animada */
 @media print { .portrait { display: none !important; } }
 .about-body strong { color: var(--text); font-weight: 600; }
 

@@ -58,7 +58,7 @@ Site pessoal de **Antônio Lucas**, desenvolvedor de software formado em Sistema
 - **E-mail pelo Gmail:** abre a tela de escrever já com destinatário, assunto e mensagem.
 - **Projetos dinâmicos:** os cards são gerados a partir de um arquivo de configuração, com imagem, funcionalidades, tecnologias e links.
 - **Pipeline animado** no topo, que só começa quando aparece na tela.
-- **Foto protegida contra cópia:** sem arquivo de imagem, com bloqueio de botão direito e atalhos, e borrado automático em tentativas de print.
+- **Foto com proteção discreta:** aparece nítida na hora, desenhada em canvas (sem arquivo de imagem), com marca d'água e bloqueio de botão direito e arrasto.
 - **Microinterações:** entrada das seções em cascata, brilho que segue o mouse nos cards e menu que destaca a seção atual.
 - **Totalmente responsivo:** computador, tablet e celular, com menu "hambúrguer" no celular.
 
@@ -72,8 +72,7 @@ Site pessoal de **Antônio Lucas**, desenvolvedor de software formado em Sistema
 | **Textos protegidos com `esc()`** | Nada do `config.js` vira HTML sem ser tratado: evita injeção de código |
 | **`IntersectionObserver` para animações** | As animações disparam ao entrar na tela, sem cálculos a cada rolagem |
 | **Foto desenhada em `<canvas>` a partir de dados embaralhados** | Não existe `<img>` para salvar, e a foto não aparece como imagem no DevTools |
-| **Borrado instantâneo com "tempo de volta" de 4 s** | A Ferramenta de Captura devolve a tela por um instante antes de congelar. O atraso garante que ela congele a foto ainda borrada |
-| **Sem detecção de DevTools pelo tamanho da janela** | Ela confundia o zoom do navegador com o DevTools e deixaria a foto sempre borrada para essas pessoas |
+| **Foto nítida desde o carregamento, sem borrado** | A primeira impressão vem antes: o visitante vê a foto na hora, sem clicar nem esperar |
 | **Respeito ao "reduzir movimento"** | Acessibilidade: quem desativa animações no sistema vê tudo direto |
 
 ## 🛠 Tecnologias
