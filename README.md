@@ -4,7 +4,7 @@
 
 **Portfólio e hub de captação de clientes para desenvolvimento de software sob medida.**
 
-[📘 Documentação completa](docs/DOCUMENTACAO.md)
+[**🌐 Ver o site ao vivo**](https://contact-us23.netlify.app/) · [📘 Documentação completa](https://github.com/ALucas314/Contact-Us/blob/main/docs/DOCUMENTACAO.md)
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
