@@ -1,47 +1,88 @@
-# Portfólio · Desenvolvimento de software sob medida
+<div align="center">
 
-Site de portfólio e captação de clientes: apresenta serviços e projetos e converte visitantes em conversas pelo **WhatsApp**.
+# ⚡ antoniolucas.dev
 
-Feito em **HTML, CSS e JavaScript puros**, sem frameworks e sem etapa de build. Abre direto no navegador e publica no Netlify em segundos.
+**Portfólio e hub de captação de clientes para desenvolvimento de software sob medida.**
 
-## ✏️ Personalizar (5 minutos)
+[📘 Documentação completa](docs/DOCUMENTACAO.md)
 
-Tudo o que é pessoal fica em **um único arquivo**: [`assets/js/config.js`](assets/js/config.js).
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript_puro-F7DF1E?logo=javascript&logoColor=black)
+![Netlify](https://img.shields.io/badge/Deploy-Netlify-00C7B7?logo=netlify&logoColor=white)
 
-| Campo | O que colocar |
+<img src="docs/screenshots/desktop-hero.png" alt="Topo do portfólio no computador" width="900" />
+
+</div>
+
+---
+
+## 📌 Sobre o projeto
+
+Site pessoal de **Antônio Lucas**, desenvolvedor de software formado em Sistemas de Informação pela UFPA.
+
+**O objetivo:** não ser só uma vitrine, mas uma **ferramenta de captação de clientes**. Em poucos segundos o visitante entende quem eu sou, o que desenvolvo e quais projetos já entreguei, e chega a uma conversa comigo pelo **WhatsApp** com um clique.
+
+**A identidade:** o conceito *"do papel ao deploy"*. No topo, um pipeline animado mostra um projeto passando por Ideia → Planejamento → Desenvolvimento → Deploy, com um log de terminal sendo digitado. É a assinatura visual do site, pensada para não parecer template.
+
+## 📱 Telas
+
+| Topo (celular) | Projetos (celular) | Contato (celular) |
+|:-:|:-:|:-:|
+| <img src="docs/screenshots/mobile-hero.png" width="230" alt="Topo no celular" /> | <img src="docs/screenshots/mobile-projetos.png" width="230" alt="Projetos no celular" /> | <img src="docs/screenshots/mobile-contato.png" width="230" alt="Contato no celular" /> |
+
+<details>
+<summary><b>Ver mais telas no computador</b></summary>
+
+<br />
+
+**Serviços**
+<img src="docs/screenshots/desktop-servicos.png" alt="Seção de serviços" width="900" />
+
+**Projetos**
+<img src="docs/screenshots/desktop-projetos.png" alt="Seção de projetos" width="900" />
+
+**Processo e diferenciais**
+<img src="docs/screenshots/desktop-processo.png" alt="Seção de processo" width="900" />
+
+**Contato**
+<img src="docs/screenshots/desktop-contato.png" alt="Seção de contato" width="900" />
+
+</details>
+
+> A seção "Sobre" não aparece nos prints de propósito: ela tem a minha foto, que é protegida contra cópia no site.
+
+## ✨ Funcionalidades
+
+- **Conversão pelo WhatsApp:** 5 botões (topo, hero, projetos, contato e flutuante) abrem uma conversa com mensagem já escrita.
+- **E-mail pelo Gmail:** abre a tela de escrever já com destinatário, assunto e mensagem.
+- **Projetos dinâmicos:** os cards são gerados a partir de um arquivo de configuração, com imagem, funcionalidades, tecnologias e links.
+- **Pipeline animado** no topo, que só começa quando aparece na tela.
+- **Foto protegida contra cópia:** sem arquivo de imagem, com bloqueio de botão direito e atalhos, e borrado automático em tentativas de print.
+- **Microinterações:** entrada das seções em cascata, brilho que segue o mouse nos cards e menu que destaca a seção atual.
+- **Totalmente responsivo:** computador, tablet e celular, com menu "hambúrguer" no celular.
+
+## 🧠 Decisões técnicas
+
+| Decisão | Por quê |
 |---|---|
-| `name`, `fullName`, `role` | Seu nome e seu título |
-| `whatsapp` | **55 + DDD + número**, só dígitos. Ex.: `5511987654321` |
-| `whatsappMessage` | A mensagem que já vem escrita quando o cliente clica |
-| `email`, `linkedin`, `github` | Seus contatos. Se deixar algum vazio (`""`), o botão some sozinho |
-| `projects` | Seus projetos: nome, descrição, funcionalidades, tecnologias, links e imagem |
+| **HTML, CSS e JavaScript puros, sem build** | Carrega rápido, publica em qualquer hospedagem estática e é fácil de manter |
+| **Tudo pessoal em um único `config.js`** | Trocar nome, WhatsApp, redes ou projetos não exige mexer no código |
+| **Cards de projetos gerados por JavaScript** | Adicionar um projeto é só incluir um bloco no `config.js` |
+| **Textos protegidos com `esc()`** | Nada do `config.js` vira HTML sem ser tratado: evita injeção de código |
+| **`IntersectionObserver` para animações** | As animações disparam ao entrar na tela, sem cálculos a cada rolagem |
+| **Foto desenhada em `<canvas>` a partir de dados embaralhados** | Não existe `<img>` para salvar, e a foto não aparece como imagem no DevTools |
+| **Borrado instantâneo com "tempo de volta" de 4 s** | A Ferramenta de Captura devolve a tela por um instante antes de congelar. O atraso garante que ela congele a foto ainda borrada |
+| **Sem detecção de DevTools pelo tamanho da janela** | Ela confundia o zoom do navegador com o DevTools e deixaria a foto sempre borrada para essas pessoas |
+| **Respeito ao "reduzir movimento"** | Acessibilidade: quem desativa animações no sistema vê tudo direto |
 
-As imagens dos projetos ficam em `assets/img/`. O ideal é 1366×854 px.
+## 🛠 Tecnologias
 
-### Sua foto (protegida)
+**HTML5 · CSS3 · JavaScript (ES6+) · SVG · Canvas API · IntersectionObserver · Google Fonts (Geist, Geist Mono, Instrument Serif) · Netlify**
 
-A foto da seção "Sobre" **não fica como arquivo de imagem** no site. Ela é embaralhada dentro de `assets/js/photo-data.js` e desenhada na tela por script. Além disso, o site:
+## 🚀 Como rodar
 
-- bloqueia o botão direito, o arrastar e o "segurar para salvar" do celular na foto;
-- bloqueia os atalhos F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S e Ctrl+P;
-- **borra a foto na hora** ao apertar a tecla Windows (início do Win+Shift+S), ao apertar Print Screen, quando o mouse sai da página (ex.: indo abrir a Ferramenta de Captura) ou quando a página perde o foco;
-- esconde a foto na impressão e coloca uma marca d'água discreta.
-
-> Nenhum site consegue impedir 100%: alguém sempre pode fotografar a tela com o celular, e quem entende de programação contorna qualquer bloqueio. Essas proteções dificultam a cópia para a grande maioria das pessoas.
-
-**Para trocar a foto** (quadrada, de preferência), rode na pasta do projeto, apontando para o arquivo da nova foto:
-
-```bash
-node tools/proteger-foto.mjs "C:\caminho\da\nova-foto.jpg" assets/js/photo-data.js
-```
-
-Não coloque a foto original dentro da pasta do projeto: tudo o que está nela fica público quando o site é publicado.
-
-> Enquanto o `whatsapp` estiver com o número de exemplo (`5500000000000`), os botões abrem o WhatsApp sem destinatário válido. Troque antes de publicar.
-
-## ▶️ Ver no computador
-
-Dê dois cliques no `index.html`, ou rode um servidor local na pasta:
+Não precisa instalar nada. Abra o `index.html` no navegador, ou use um servidor local:
 
 ```bash
 python -m http.server 5500
@@ -49,37 +90,41 @@ python -m http.server 5500
 
 Depois acesse `http://localhost:5500`. Também funciona com a extensão **Live Server** do VS Code.
 
-## 🚀 Publicar no Netlify (grátis)
+## ✏️ Como personalizar
 
-1. Suba esta pasta para um repositório no GitHub.
-2. No Netlify: **Add new project → Import from Git →** escolha o repositório → **Deploy**. O `netlify.toml` já está configurado.
-3. Depois de publicado, troque no `index.html` o `og:image` por um endereço completo (ex.: `https://seu-site.netlify.app/assets/img/og.png`). Assim a prévia com imagem aparece quando o link é compartilhado no WhatsApp e no LinkedIn.
+Edite **`assets/js/config.js`**: nome, WhatsApp (55 + DDD + número), mensagem, e-mail, LinkedIn, GitHub e projetos. O passo a passo completo, incluindo como trocar a foto protegida, está na [documentação](docs/DOCUMENTACAO.md#-como-personalizar).
 
-## 🧩 Estrutura
+## 📁 Estrutura
 
 ```
 ├── index.html            # Estrutura e textos de todas as seções
-├── netlify.toml          # Configuração de publicação
-└── assets/
-    ├── css/styles.css    # Identidade visual, layout e animações
-    ├── js/config.js      # ← seus dados (edite aqui)
-    ├── js/main.js        # Projetos, WhatsApp, menu, animações e pipeline do hero
-    └── img/              # Imagens dos projetos, favicon e prévia de compartilhamento
+├── netlify.toml          # Publicação e cabeçalhos de segurança/cache
+├── assets/
+│   ├── css/styles.css    # Identidade visual, layout e animações
+│   ├── js/config.js      # ← dados pessoais e projetos (edite aqui)
+│   ├── js/main.js        # Toda a lógica, em 6 seções comentadas
+│   ├── js/photo-data.js  # Foto embaralhada (gerada pelo script)
+│   └── img/              # Imagens dos projetos, prévia de compartilhamento e favicon
+├── tools/
+│   └── proteger-foto.mjs # Gera o photo-data.js a partir de uma foto
+└── docs/
+    ├── DOCUMENTACAO.md   # Manual completo
+    └── screenshots/      # Imagens deste README
 ```
 
-## 🎨 Identidade visual
+## 🔭 Próximos passos
 
-- **Conceito "do papel ao deploy":** o hero mostra um pipeline animado (Ideia → Planejamento → Desenvolvimento → Deploy) com log de terminal. É a assinatura do site e mostra, sem precisar explicar, como você trabalha.
-- **Dark mode** com um único acento **verde-sinal** (`#c8f257`), a cor de "build passou".
-- **Tipografia:** Geist (textos), Geist Mono (detalhes técnicos) e Instrument Serif em itálico para dar personalidade às palavras-chave.
-- **Microinterações:** brilho que segue o mouse nos cards, entrada suave das seções, botão flutuante do WhatsApp que aparece depois do topo.
-- **Acessibilidade:** navegação por teclado, link "pular para o conteúdo" e respeito à opção do sistema "reduzir movimento".
+- Adicionar novos projetos conforme forem entregues
+- Seção de depoimentos de clientes
+- Versão em inglês
+- Domínio próprio e métricas de cliques no WhatsApp
 
-## Seções
+## 👤 Autor
 
-1. **Hero:** headline, chamada para o WhatsApp e botão para o portfólio
-2. **Sobre:** apresentação, abordagem e tecnologias
-3. **Serviços:** 6 serviços em grade
-4. **Projetos:** cards com imagem, descrição, funcionalidades, tecnologias e links (vêm do `config.js`)
-5. **Processo e diferenciais:** como o trabalho acontece, do primeiro contato à entrega
-6. **Contato:** chamada final para o WhatsApp, além de LinkedIn, GitHub e e-mail
+**Antônio Lucas** · Desenvolvedor de Software · Bacharel em Sistemas de Informação (UFPA)
+
+[LinkedIn](https://www.linkedin.com/in/antonio-lucas-costa-araujo) · [GitHub](https://github.com/ALucas314)
+
+## 🔒 Licença
+
+**Todos os direitos reservados.** O código está público apenas para visualização. Não é permitido copiar, modificar, hospedar ou reutilizar este site, o design ou a foto sem autorização por escrito. Veja o arquivo [LICENSE](LICENSE).

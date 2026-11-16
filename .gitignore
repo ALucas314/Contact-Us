@@ -1,0 +1,8 @@
+# Nunca publicar a foto original (use tools/proteger-foto.mjs)
+foto*.jpg
+foto*.jpeg
+foto*.png
+!assets/js/photo-data.js
+.claude/
+.DS_Store
+Thumbs.db

@@ -11,7 +11,6 @@ window.PORTFOLIO = {
   fullName: "Antônio Lucas",             // Nome completo (rodapé)
   brand: "antoniolucas",                 // Logo do topo: aparece como "antoniolucas.dev"
   role: "Desenvolvedor de Software",     // Seu título profissional
-  location: "Brasil · atendimento remoto",
 
   // ---------- Contato ----------
   // WhatsApp no formato 55 + DDD + número, só dígitos. Ex.: "5511987654321"
